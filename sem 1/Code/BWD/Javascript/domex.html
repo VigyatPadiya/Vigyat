@@ -1,0 +1,30 @@
+<!doctype html>
+<head>
+<script>
+	function f1()
+	{
+		var a=document.getElementById("t1").value;
+		if(a>=18)
+		{
+	document.getElementById("p1").innerHTML="Yes";
+		}
+		else
+		{
+	document.getElementById("p1").innerHTML="No";
+	}
+
+	}
+
+</script>
+
+</head>
+<body>
+	
+<input type="text" id="t1" placeholder="Enter Your Age" onkeyup="f1()">
+<br><br>
+<input type="button" value="Click">
+<p id="p1" style="color:red;size:20px"></p>
+<br><br>
+
+</body>
+</html>

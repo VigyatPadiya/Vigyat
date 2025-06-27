@@ -1,0 +1,31 @@
+body{
+	background-color:#7F8CAA;
+	font-size:x-large;
+	}
+.login
+{
+	padding: 50px;
+	margin: 50px;
+	justify-items: center;
+}
+.login_box
+{
+	padding: 40px;
+	height: auto;
+	width: 400px;
+	border: 5px double #EEEEEE;
+	background-color:#333446;
+	border-radius: 20px;
+	display:grid;
+	justify-content: center;
+}
+.login_box input
+{
+	padding: 10px;
+	margin: 10px;
+	width: auto;
+	border-radius: 15px;
+	color: #333446;
+	border: 1px dashed #EAEFEF;
+	background-color: #B8CFCE;
+}

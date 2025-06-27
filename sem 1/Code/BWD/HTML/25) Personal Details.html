@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Personal Details</title>
+	</head>
+	<body>
+			<h2>Personal Details</h2>
+		<form>
+			Personal Details
+			<p>
+				<label>
+					Salutation
+					<br>
+					<select name="Salutation">
+						<option>--None--</option>
+						<option>Mr.</option>
+						<option>Ms.</option>
+						<option>Mrs.</option>
+						<option>Dr.</option>
+						<option>Prof.</option>
+					</select>
+				</label>
+			</p>
+			<p>
+				<label>First name: <input name="FirstName"></label>
+			</p>
+			<p>
+				<lable>Last name: <input name="Lastname"></lable>
+			</p>
+			<p>
+				Gender : <label><input type="radio" name="Gender" value="Male">
+					Male
+				</label>
+			<label><input type="radio" name="Gender" value="female"> 
+				Female
+			</label>
+			</p>
+			<p>
+				<label>Email: <input type="email" name="email"></label>
+			</p>
+			<p>
+				<label>Date of Birth:
+					<input type="date" name="birthdate">
+				</label>
+			</p>
+			<p>
+				<lable>
+					Address:
+					<br>
+					<textarea name="Address" cols="30" rows="3"></textarea>
+				</lable>
+			</p>
+			<p>
+				<label for="myfile">Select a Image :</label>
+				<input type="file" id="myfile" name="myfile">
+			</p>
+			<p>
+				<button type="submit">Submit</button>
+			</p>
+		</form>
+		</body>
+		</html>

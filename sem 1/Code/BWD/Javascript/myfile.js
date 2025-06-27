@@ -1,0 +1,1 @@
+document.write("<b> This is the way to implement external javascript</b>")

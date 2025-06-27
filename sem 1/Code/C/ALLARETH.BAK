@@ -1,0 +1,27 @@
+#include<stdio.h>
+#include<conio.h>
+
+void main(){
+	int num1,num2,sum,multi,div,sub;
+	clrscr();
+	printf("Enter 1 number:");
+	scanf("%d",&num1);
+	printf("Enter 2 number: ");
+	scanf("%d",&num2);
+	sum = num1+num2;
+	multi = num1*num2;
+	div = num1/num2;
+	sub = num1-num2;
+	printf("\n %d",sum);
+	printf("\n %d",multi);
+	printf("\n %d",div);
+	printf("\n %d",sub);
+	getch();
+	}
+
+
+
+
+
+
+

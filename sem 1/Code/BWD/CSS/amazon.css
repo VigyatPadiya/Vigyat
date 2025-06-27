@@ -1,0 +1,46 @@
+*{
+    padding: 0%;
+    margin: 0%;
+}
+#logo{
+    color: darkorange;
+    font-size: 25px;
+} 
+header {
+    background-color: #0f1111;
+    height: 60px;
+    color: white;
+}
+a {
+    text-decoration: none;
+    color: white;
+    margin-right: 200px;
+}
+input{
+    border-radius: 5px;
+}
+button{
+    background-color: #f08804;
+    border-radius: 5px;
+
+}
+#box1{
+    height: 100px;
+    background-color: rgba(246, 135, 44, 0.75);
+    border-style:ridge;
+}
+#concept{
+    margin: 25px;
+    padding: 25px;
+}
+
+.conceptbox{
+    height: 100px;
+    width: 100px;
+    display: inline-block;
+    background-color: coral;
+    margin: 25px;
+    padding: 25px;
+    border-radius: 25px;
+    border:solid rgba(125, 83, 6, 0.963);
+}

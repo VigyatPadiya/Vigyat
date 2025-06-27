@@ -1,0 +1,18 @@
+#include<stdio.h>
+#include<conio.h>
+void main(){
+	int a,b,c;
+	clrscr();
+	printf("Enter 1 number:");
+	scanf("%d",a);
+	printf("Enter 2 number:");
+	scanf("%d",b);
+	printf("Enter 3 number:");
+	scanf("%d",c);
+	if (a<b && a<c)
+	{printf("Number 1 is minimum:%d",a);}
+	else if(b<a && b<c)
+	{printf("Number 2 is minimum:%d",b);}
+	else {printf("Number 3 is minimum:%d",c);}
+	getch();
+	}

@@ -1,0 +1,312 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    background-color: rgb(0, 0, 0);
+}
+
+header
+{
+    margin-top: 10px;
+    padding: 15px;
+    height: 60px;
+  
+}
+
+
+#logo
+{
+    font-size: 50px;
+    color:coral;
+}
+
+#search
+{
+    padding: 5px;
+    margin-left: 350px;
+    border-radius: 15px;
+    font-size: larger;
+    background-color: rgb(248, 120, 74);
+    color: white;
+}
+#submit
+{
+    padding: 5px;
+    margin-left: 20px;
+    border-radius: 15px;
+    font-size: larger;
+    background-color: rgba(234, 125, 86, 0.625);
+    color: white;
+}
+
+.main
+{
+    border-radius: 30px;
+    text-align: center;
+    color: white;
+}
+.main h1,
+.main p
+{
+    color: white;
+    background-color: coral;
+}
+
+.main img
+{
+    height: 800px;
+    width: auto;
+}
+
+#select
+{
+    padding: 100px;
+    align-items: center;
+    border: 10px solid white;
+    border-radius: 30px;
+}
+#select h1,
+#select p
+{
+    color: white;
+    text-align: center;
+}
+.car
+{
+    margin: 30px;
+    height: 700px;
+    width: 350px;
+    display: inline-block;
+    border-radius: 30px;
+    color: white;
+  
+}
+
+.car h1
+{
+    height: 100px;
+    text-align: center;
+  
+}
+#I1
+{
+ 
+    background-image: url(Photos/super.jpg);
+}
+#I2
+{
+ 
+    background-image: url(Photos/sports.jpg);
+}
+#I3
+{
+ 
+    background-image: url(Photos/SUV.jpg);
+}
+#I1, #I2, #I3 {
+  height: 600px;
+  background-position: center;
+  background-size: cover;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+#I1:hover,
+#I2:hover,
+#I3:hover {
+  transform: scale(1.05);
+  border: 10px solid white;
+}
+
+.lik
+{
+    padding: 5px;
+    margin-left: 50px;
+    text-decoration: none;
+    font-size: x-large;
+    color: black;
+    border: 1px;
+    border-style: solid;
+    border-radius: 15px;
+    background-color: coral;
+}
+.container
+{
+    position: relative;
+    overflow: hidden;
+}
+.photo
+{
+    display: none;
+    vertical-align: middle;
+
+}
+.photo img
+{
+   
+    display: block;
+    height: 800px;
+    width: auto;
+    border-radius: 50px;
+
+}
+
+.fade
+{   
+    border-radius: 50px;
+    animation: fadeEffect 1.5s ease-in-out;
+    margin: 10%;
+}
+
+@keyframes fadeEffect{
+    from {opacity:0.4;}
+    to {opacity: 1;}
+}
+.footer {
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+  margin-top: 60px;
+}
+
+.footer h2 {
+  margin-bottom: 10px;
+  font-size: 28px;
+}
+
+.footer p {
+  margin: 8px 0;
+  color: #ccc;
+}
+
+.footer-links {
+  margin: 20px 0;
+}
+
+.footer-links a {
+  margin: 0 15px;
+  color: #aaa;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: #fff;
+}
+
+.footer-copy {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #777;
+}
+
+/*Contact Us*/
+#contact
+{
+     display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+.contact_box
+{
+    padding: 40px;
+    text-align: center;
+    width: 400px;
+    border: 10px solid white;
+    border-radius: 30px;
+}
+.contact_box input[type="text"]
+{
+    margin: 10px 0;
+    padding: 10px;
+    height: 100px;
+    width: 100%;
+    border: 1px solid coral;
+    border-radius: 10px;
+    font-size: 16px;
+    color: coral;
+}
+.contact_box input[type="email"],
+.contact_box input[type="submit"]
+{
+    margin: 10px 0;
+    padding: 10px;
+    width: 100%;
+     border: 1px solid coral;
+    border-radius: 10px;
+    font-size: 16px;
+    color: coral;
+}
+.contact_box input[type="submit"]
+{
+    background-color: white;
+    color: coral;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.contact_box input[type="submit"]:hover
+{
+    background-color: coral;
+    color: white;
+}
+
+/*Login*/
+
+#login
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+.login-box
+{
+    padding: 40px;
+    text-align: center;
+    width: 300px;
+    border: 10px solid white;
+    border-radius: 30px;
+    
+    
+}
+.login-box h2
+{
+    color: white;
+    margin-bottom: 20px;
+    font-size: 28px;
+}
+.login-box input[type="email"],
+.login-box input[type="Password"],
+.login-box input[type="submit"]
+{
+    margin: 10px 0;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+.login-box input[type="email"],
+.login-box input[type="password"]
+{
+    background-color: coral;
+    color: white;
+}
+
+.login-box input[type="submit"]
+{
+    background-color: white;
+    color: coral;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.login-box input[type="submit"]:hover
+{
+    background-color: coral;
+    color: white;
+}

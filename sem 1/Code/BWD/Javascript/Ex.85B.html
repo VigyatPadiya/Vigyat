@@ -1,0 +1,42 @@
+<!--Ex.85(A) Create a webpage to access HTML textbox value into JavaScript. -->
+
+<!doctype html>
+<html>
+<head>
+<title>JavaScript For Loop Example</title>
+
+<script type="text/javascript">
+
+	function checkpass()
+	{
+		var a=document.getElementById("t1").value;
+		
+		if(a.length<8)
+		{
+document.getElementById("p1").innerHTML="<h2>Weak</h2>";
+		}
+		else if(a.length<16)
+		{
+		document.getElementById("p1").innerHTML="<h2>Average</h2>";
+		}
+	else
+{
+		document.getElementById("p1").innerHTML="<h2>Strong</h2>";
+}
+	}
+
+</script>
+</head>
+<body>
+<center>
+<hr>
+<h2>Enter Password</h2>
+	<input type="text" id="t1" onkeypress="checkpass()">
+
+	
+		<p id="p1"></p>
+	
+
+</center>
+</body>
+</html>

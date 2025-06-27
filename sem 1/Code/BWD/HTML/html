@@ -1,0 +1,7 @@
+inline style sheet :Define style sheet rules directly along with the html elements using style attribute.
+internal style sheet : Define style sheet rules in header section of the Html Document using <style> tag.
+External style sheet : Define style sheet rules in a seprate .css file and then include that file in your Html document using html <link> tag.
+The selector ponits to the Html element you want to style.
+		Selector 	Declaration		Declaration
+		  h1	     {color:blue;font-size:12px;}
+			property    Value  property  value

@@ -1,0 +1,19 @@
+#include<stdio.h>
+int main()
+{
+	int num,temp,or,rev=0;
+	printf("Enter a number: ");
+	scanf("%d",&num);
+	or=num;
+	while (num!=0)
+		{temp=num%10;
+		rev=rev+(temp*temp*temp);
+		num=num/10;
+		}
+	if (or==rev){
+	printf("Number is Armstrong");
+	}
+	else
+	{printf("Number is not Armdtrong");
+	}
+}

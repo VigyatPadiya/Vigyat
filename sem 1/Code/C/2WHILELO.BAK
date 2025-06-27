@@ -1,0 +1,13 @@
+#include<stdio.h>
+#include<conio.h>
+void main(){
+	int i=1,j=10;
+	clrscr();
+	while(i<=10 && j>=1)
+	{printf("%d %d",i,j);
+	i++;
+	j--;
+	}
+
+	getch();
+		}
