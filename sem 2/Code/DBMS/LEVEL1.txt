@@ -1,0 +1,326 @@
+by Dhruv Mawkwana :)
+
+1 )
+SQL> SELECT*FROM EMP;
+
+     EMPNO EMPNM      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+---------- ---------- --------- ---------- --------- ---------- ---------- ----------
+      7620 SMITH      CLEAR           7620 17-DEC-00       7000                    20
+      7200 ALLEN      SALESMAN        7520 20-FEB-00      16000        300         20
+      7620 WARD       SALESMAN        7685 22-FEB-00      12500        500         30
+      7654 JONES      MANAGER         7862 02-SEP-01      12500                    20
+      7850 MARTIN     SALESMAN        7850 01-MAY-00      12500       1400         30
+      7652 BLAKE      MANAGER         7852 01-MAY-00      28500                    30
+      7522 CLEARK     MANAGER         7829 09-MAY-00      12000                    30
+      7789 SCOTT      ANALYST         7566 19-APR-92      15222                    80
+      7520 KING       PRESIDENT            17-NOV-00      17888                    20
+      7800 TUNNER     SALESMAN        7688 23-SEP-88      18880                    30
+      7200 ADAMS      CLEARK          7752 23-MAY-99      23888                    42
+      9288 JAMES      CLEARK          7622 02-DEC-00      80000                    10
+      7850 FORD       ANALYST         7566 02-DEC-92      30000                    20
+
+13 rows selected.
+
+2 ) 
+SQL> DESCRIBE EMP;
+ Name
+                                                   Null?    Type
+ ----------------------------------------------------------------------------------------------------------------- -------- ----------------------------------------------------------------------------
+ EMPNO
+                                                            NUMBER(4)
+ EMPNM
+                                                            VARCHAR2(10)
+ JOB
+                                                            VARCHAR2(9)
+ MGR
+                                                            NUMBER(4)
+ HIREDATE
+                                                            DATE
+ SAL
+                                                            NUMBER(7,2)
+ COMM
+                                                            NUMBER(7,2)
+ DEPTNO
+                                                            NUMBER(2)
+
+3) 
+SQL> SELECT*FROM EMP;
+
+     EMPNO EMPNM      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+---------- ---------- --------- ---------- --------- ---------- ---------- ----------
+      7620 SMITH      CLEAR           7620 17-DEC-00       7000
+           20
+      7200 ALLEN      SALESMAN        7520 20-FEB-00      16000        300
+           20
+      7620 WARD       SALESMAN        7685 22-FEB-00      12500        500
+           30
+      7654 JONES      MANAGER         7862 02-SEP-01      12500
+           20
+      7850 MARTIN     SALESMAN        7850 01-MAY-00      12500       1400
+           30
+      7652 BLAKE      MANAGER         7852 01-MAY-00      28500
+           30
+      7522 CLEARK     MANAGER         7829 09-MAY-00      12000
+           30
+      7789 SCOTT      ANALYST         7566 19-APR-92      15222
+           80
+      7520 KING       PRESIDENT            17-NOV-00      17888
+           20
+      7800 TUNNER     SALESMAN        7688 23-SEP-88      18880
+           30
+      7200 ADAMS      CLEARK          7752 23-MAY-99      23888
+           42
+      9288 JAMES      CLEARK          7622 02-DEC-00      80000
+           10
+      7850 FORD       ANALYST         7566 02-DEC-92      30000
+           20
+
+
+SQL> SELECT*FROM DEPT;
+
+    DEPTNO DNAME          LOC
+---------- -------------- -------------
+        10 ACCOUNTING     NEWYORK
+        20 RESERACH       DALLAS
+        30 SALES          CHICAGO
+
+SQL> SELECT*FROM SELGRADE;
+
+     GRADE      LOSAL      HISAL
+---------- ---------- ----------
+         1       7000      12000
+         2      12010      14000
+         3      14010      20000
+         4      20010      30000
+         5      30010      99999
+4) 
+SQL> SELECT EMPNM,JOB FROM EMP;
+
+EMPNM      JOB
+---------- ---------
+SMITH      CLEAR
+ALLEN      SALESMAN
+WARD       SALESMAN
+JONES      MANAGER
+MARTIN     SALESMAN
+BLAKE      MANAGER
+CLEARK     MANAGER
+SCOTT      ANALYST
+KING       PRESIDENT
+TUNNER     SALESMAN
+ADAMS      CLEARK
+JAMES      CLEARK
+FORD       ANALYST
+
+13 rows selected.
+
+5)
+SQL> SELECT EMPNO FROM EMP;
+
+     EMPNO
+----------
+      7620
+      7200
+      7620
+      7654
+      7850
+      7652
+      7522
+      7789
+      7520
+      7800
+      7200
+      9288
+      7850
+
+13 rows selected.
+
+6)
+SQL> SELECT COMM FROM EMP;
+
+      COMM
+----------
+
+       300
+       500
+
+      1400
+
+
+
+
+
+
+
+
+
+
+7)
+SQL> SELECT MGR FROM EMP;
+
+       MGR
+----------
+      7620
+      7520
+      7685
+      7862
+      7850
+      7852
+      7829
+      7566
+
+      7688
+      7752
+      7622
+      7566
+
+13 rows selected.
+8)
+SQL> SELECT DEPTNO FROM EMP;
+
+    DEPTNO
+----------
+        20
+        20
+        30
+        20
+        30
+        30
+        30
+        80
+        20
+        30
+        42
+        10
+        20
+
+13 rows selected.
+
+9)
+SQL> SELECT EMPNO,EMPNM,JOB,MGR FROM EMP;
+
+     EMPNO EMPNM      JOB              MGR
+---------- ---------- --------- ----------
+      7620 SMITH      CLEAR           7620
+      7200 ALLEN      SALESMAN        7520
+      7620 WARD       SALESMAN        7685
+      7654 JONES      MANAGER         7862
+      7850 MARTIN     SALESMAN        7850
+      7652 BLAKE      MANAGER         7852
+      7522 CLEARK     MANAGER         7829
+      7789 SCOTT      ANALYST         7566
+      7520 KING       PRESIDENT
+      7800 TUNNER     SALESMAN        7688
+      7200 ADAMS      CLEARK          7752
+      9288 JAMES      CLEARK          7622
+      7850 FORD       ANALYST         7566
+
+13 rows selected.
+
+10)
+SQL> SELECT EMPNM,MGR FROM EMP;
+
+EMPNM             MGR
+---------- ----------
+SMITH            7620
+ALLEN            7520
+WARD             7685
+JONES            7862
+MARTIN           7850
+BLAKE            7852
+CLEARK           7829
+SCOTT            7566
+KING
+TUNNER           7688
+ADAMS            7752
+JAMES            7622
+FORD             7566
+
+13 rows selected.
+
+11)
+SQL> SELECT JOB,COMM FROM EMP;
+
+JOB             COMM
+--------- ----------
+CLEAR
+SALESMAN         300
+SALESMAN         500
+MANAGER
+SALESMAN        1400
+MANAGER
+MANAGER
+ANALYST
+PRESIDENT
+SALESMAN
+CLEARK
+CLEARK
+ANALYST
+
+13 rows selected.
+
+12)
+SQL> SELECT EMPNO,DEPTNO FROM EMP;
+
+     EMPNO     DEPTNO
+---------- ----------
+      7620         20
+      7200         20
+      7620         30
+      7654         20
+      7850         30
+      7652         30
+      7522         30
+      7789         80
+      7520         20
+      7800         30
+      7200         42
+      9288         10
+      7850         20
+
+13 rows selected.
+
+
+
+13)
+SQL> SELECT DEPTNO,EMPNO,SAL,JOB FROM EMP;
+
+    DEPTNO      EMPNO        SAL JOB
+---------- ---------- ---------- ---------
+        20       7620       7000 CLEAR
+        20       7200      16000 SALESMAN
+        30       7620      12500 SALESMAN
+        20       7654      12500 MANAGER
+        30       7850      12500 SALESMAN
+        30       7652      28500 MANAGER
+        30       7522      12000 MANAGER
+        80       7789      15222 ANALYST
+        20       7520      17888 PRESIDENT
+        30       7800      18880 SALESMAN
+        42       7200      23888 CLEARK
+        10       9288      80000 CLEARK
+        20       7850      30000 ANALYST
+
+13 rows selected.
+
+14)
+SQL> SELECT GRADE FROM SELGRADE;
+
+     GRADE
+----------
+         1
+         2
+         3
+         4
+         5
+
+15)
+SQL> SELECT LOSAL,HISAL FROM SELGRADE;
+
+     LOSAL      HISAL
+---------- ----------
+      7000      12000
+     12010      14000
+     14010      20000
+     20010      30000
+     30010      99999

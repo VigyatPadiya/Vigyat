@@ -1,0 +1,12 @@
+
+SQL> create table emp
+  2  (empno number(4),
+  3  empnm varchar(10),
+  4  job varchar(9),
+  5  mgr number(4),
+  6  hiredate date,
+  7  sal number(7,2),
+  8  comm number(7,2),
+  9  deptno number(2));
+
+Table created.

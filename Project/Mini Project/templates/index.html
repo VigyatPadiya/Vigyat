@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Downloader</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <nav class="navbar">
+        <h2 class="logo">YT VIDEOS</h2>
+        <div class="login">
+            <button class="btn">Sign in</button>
+        </div>
+    </nav>
+    <hr>
+    <div class="color">
+        <div class="main">
+            <h1 class="h1">Download Youtube Videos</h1>
+            <p class="p">Free Online YouTube Video Downloader | HD & Full HD Quality</p>
+            <div class="input">
+                <form class="input-wrapper">
+                    <input type="text" placeholder="Paste video URL..." id="input" />
+                    <i class="fa-solid fa-paste paste-icon" id="icon"></i>
+                    <button id="btnn">Fetch Info</button>
+                </form>
+                <div id="video-container"></div>
+            </div>
+        </div>
+        <div id="loader" class="loader-overlay" style="display:none;">
+            <div class="spinner"></div>
+            <p id="loader-text">Loading...</p>
+        </div>
+
+        <script src="{{ url_for('static', filename='script.js') }}"></script>
+    </div>
+</body>
+
+</html>

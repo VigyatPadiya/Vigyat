@@ -1,0 +1,23 @@
+1) orderd list
+2) unordered list
+
+*unordered list
+For undered list <ul> tag is used and for listing item it use <li> tag 
+It shows item using circle,square,dic,etc
+
+Example:-
+<html>
+	<head>
+	<title>Ex of Unordered list</title>
+	</head>
+	 <body>
+		<UL>
+		 <li>coffee</li>
+		 <li>Tea</li>
+		 <li>GreenTea</li>
+		</UL>
+	 </body>
+</html>
+
+
+*ordered list

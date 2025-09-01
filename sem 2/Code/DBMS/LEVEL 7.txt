@@ -1,0 +1,150 @@
+1)
+
+SQL> SELECT*FROM STUDENT_DETAILS;
+
+   STUD_ID FIRSTNM    LASTNM     BDATE     ADDRESS                   CITY            STREAM                 SEM
+---------- ---------- ---------- --------- ------------------------- --------------- --------------- ----------
+         1 DHRUV      MAKWANA    27-MAY-05 KOTECHA CHOWK             RAJKOT          IT                       2
+         2 BHAKTI     MEHTA      14-DEC-04 NEAR NIRMALA SCHOOL       RAJKOT          COMMERCE                 2
+        44 VISHWA     PARMAR     16-JUN-05 MARWADI HOSTEL            RAJKOT          MANAGEMENT               3
+         5 PARAM      BALAT      31-DEC-05 RK CHOWK                  BARODA          IT                       2
+        11 SUJAL      DUDHARATRA 20-MAY-05 KKV CIRCLE                RAJKOT          MANAGEMENT               3
+         6 DEEP       TOKLE      25-JUL-05 JALGANGA CHOWK            RAJKOT          IT                       2
+         8 ANIL       PANDAY     02-SEP-03 BHR ROAD                  SURAT           COMMERCE                 2
+         3 RAJ        SOLANKI    14-FEB-05 UNKNOWN ROAD              RAJKOT          IT                       2
+        13 DARSHAN    RAVAL      10-AUG-00 PEDAK ROAD                RAJKOT          IT                       6
+        21 ARIJIT     SINGH      26-MAR-04 KALAWAD ROAD              BARODA          COMMERCE                 4
+
+10 rows selected.
+
+
+
+2)
+
+SQL> SELECT * FROM STUDENT_DETAILS WHERE CITY='RAJKOT';
+
+   STUD_ID FIRSTNM    LASTNM     BDATE     ADDRESS                   CITY            STREAM                 SEM
+---------- ---------- ---------- --------- ------------------------- --------------- --------------- ----------
+         1 DHRUV      MAKWANA    27-MAY-05 KOTECHA CHOWK             RAJKOT          IT                       2
+         2 BHAKTI     MEHTA      14-DEC-04 NEAR NIRMALA SCHOOL       RAJKOT          COMMERCE                 2
+        44 VISHWA     PARMAR     16-JUN-05 MARWADI HOSTEL            RAJKOT          MANAGEMENT               3
+        11 SUJAL      DUDHARATRA 20-MAY-05 KKV CIRCLE                RAJKOT          MANAGEMENT               3
+         6 DEEP       TOKLE      25-JUL-05 JALGANGA CHOWK            RAJKOT          IT                       2
+         3 RAJ        SOLANKI    14-FEB-05 UNKNOWN ROAD              RAJKOT          IT                       2
+        13 DARSHAN    RAVAL      10-AUG-00 PEDAK ROAD                RAJKOT          IT                       6
+
+7 rows selected.
+
+
+3)
+
+SQL> SELECT * FROM STUDENT_DETAILS WHERE STREAM='MANAGEMENT';
+
+   STUD_ID FIRSTNM    LASTNM     BDATE     ADDRESS                   CITY            STREAM                 SEM
+---------- ---------- ---------- --------- ------------------------- --------------- --------------- ----------
+        44 VISHWA     PARMAR     16-JUN-05 MARWADI HOSTEL            RAJKOT          MANAGEMENT               3
+        11 SUJAL      DUDHARATRA 20-MAY-05 KKV CIRCLE                RAJKOT          MANAGEMENT               3
+
+
+4)
+
+SQL> SELECT * FROM STUDENT_DETAILS WHERE STREAM='IT';
+
+   STUD_ID FIRSTNM    LASTNM     BDATE     ADDRESS                   CITY            STREAM                 SEM
+---------- ---------- ---------- --------- ------------------------- --------------- --------------- ----------
+         1 DHRUV      MAKWANA    27-MAY-05 KOTECHA CHOWK             RAJKOT          IT                       2
+         5 PARAM      BALAT      31-DEC-05 RK CHOWK                  BARODA          IT                       2
+         6 DEEP       TOKLE      25-JUL-05 JALGANGA CHOWK            RAJKOT          IT                       2
+         3 RAJ        SOLANKI    14-FEB-05 UNKNOWN ROAD              RAJKOT          IT                       2
+        13 DARSHAN    RAVAL      10-AUG-00 PEDAK ROAD                RAJKOT          IT                       6
+
+
+5)
+SQL> ALTER TABLE STUDENT_DETAILS ADD COLUMN CONTACT NUMBER(10);
+
+Table altered.
+
+SQL> UPDATE STUDENT_DETAILS SET CONTACT='9865763549' WHERE STUD_ID='1';
+
+1 row updated.
+
+SQL> UPDATE STUDENT_DETAILS SET CONTACT='9933475682' WHERE STUD_ID='2';
+
+1 row updated.
+
+SQL> UPDATE STUDENT_DETAILS SET CONTACT='9965789682' WHERE STUD_ID='3';
+
+1 row updated.
+
+SQL> UPDATE STUDENT_DETAILS SET CONTACT='8655889682' WHERE STUD_ID='44';
+
+1 row updated.
+
+SQL> UPDATE STUDENT_DETAILS SET CONTACT='8265945682' WHERE STUD_ID='5';
+
+1 row updated.
+
+SQL> UPDATE STUDENT_DETAILS SET CONTACT='7568943216' WHERE STUD_ID='11';
+
+1 row updated.
+
+SQL> UPDATE STUDENT_DETAILS SET CONTACT='9856321547' WHERE STUD_ID='6';
+
+1 row updated.
+
+SQL> UPDATE STUDENT_DETAILS SET CONTACT='9765789315' WHERE STUD_ID='8';
+
+1 row updated.
+
+SQL> UPDATE STUDENT_DETAILS SET CONTACT='9656315794' WHERE STUD_ID='13';
+
+1 row updated.
+
+SQL> UPDATE STUDENT_DETAILS SET CONTACT='8765432165' WHERE STUD_ID='21';
+
+1 row updated.
+
+
+6)
+
+SQL> SELECT * FROM STUDENT_DETAILS WHERE STUD_ID>5 AND STREAM='IT';
+
+   STUD_ID FIRSTNM    LASTNM     BDATE     ADDRESS                   CITY            STREAM                 SEM    CONTACT
+---------- ---------- ---------- --------- ------------------------- --------------- --------------- ---------- ----------
+         6 DEEP       TOKLE      25-JUL-05 JALGANGA CHOWK            RAJKOT          IT                       2 9856321547
+        13 DARSHAN    RAVAL      10-AUG-00 PEDAK ROAD                RAJKOT          IT                       6 9656315794
+
+
+7)
+
+
+   STUD_ID FIRSTNM    LASTNM     BDATE     ADDRESS                   CITY            STREAM                 SEM    CONTACT
+---------- ---------- ---------- --------- ------------------------- --------------- --------------- ---------- ----------
+         8 ANIL       PANDAY     02-SEP-03 BHR ROAD                  SURAT           COMMERCE                 2 9765789315
+        21 ARIJIT     SINGH      26-MAR-04 KALAWAD ROAD              BARODA          COMMERCE                 4 8765432165
+
+
+8)
+
+SQL> ALTER TABLE STUDENT_DETAILS DROP COLUMN CONTACT;
+
+Table altered.
+
+
+9)
+
+SQL> ALTER TABLE STUDENT_DETAILS MODIFY STREAM VARCHAR(20);
+
+Table altered.
+
+
+10)
+
+SQL> SELECT*FROM STUDENT_DETAILS WHERE SEM=1;
+
+no rows selected
+
+11)
+SQL> RENAME STUDENT_DETAILS TO STUDENTS;
+
+Table renamed.

@@ -1,0 +1,211 @@
+1)
+
+SQL> DESC EMP;
+ Name                                                  Null?    Type
+ ----------------------------------------------------- -------- ------------------------------------
+ EMPNO                                                          NUMBER(4)
+ EMPLOYEENAME                                                   VARCHAR2(10)
+ DESIGNATION                                                    VARCHAR2(9)
+ MGR                                                            NUMBER(4)
+ HIREDATE                                                       DATE
+ SALARIES                                                       NUMBER(7,2)
+ COMM                                                           NUMBER(7,2)
+ DEPTNO                                                         NUMBER(2)
+
+
+2)
+
+SQL> SELECT SYSDATE FROM DUAL;
+
+SYSDATE
+---------
+23-MAR-24
+
+
+3)
+
+SQL> SELECT COUNT(EMPLOYEENAME)"TOTAL EMPLOYEES" FROM EMP;
+
+TOTAL EMPLOYEES
+---------------
+             13
+
+
+4)
+
+SQL> SELECT SUM(SALARIES) AS "TOTAL SALARY" FROM EMP;
+
+TOTAL SALARY
+------------
+      277250
+
+
+5)
+
+SQL> SELECT COUNT('DESIGNATION') FROM EMP WHERE DESIGNATION='MANAGER';
+
+COUNT('DESIGNATION')
+--------------------
+                   3
+
+6)
+
+SQL> SELECT COUNT(DEPTNO) "TOTAL DEPARTMENT" FROM DEPT;
+
+TOTAL DEPARTMENT
+----------------
+               4
+
+
+7)
+
+SQL> SELECT DEPTNO,AVG(SALARIES) AS AVERAGE_SALARY FROM EMP
+  2  GROUP BY DEPTNO;
+
+    DEPTNO AVERAGE_SALARY
+---------- --------------
+        30     15666.6667
+        20          21750
+        10          37250
+
+
+8)
+
+SQL> SELECT TO_CHAR(HIREDATE, 'DAY') AS HIREDAY FROM EMP ;
+
+HIREDAY
+---------
+SUNDAY
+TUESDAY
+THURSDAY
+MONDAY
+THURSDAY
+TUESDAY
+SATURDAY
+THURSDAY
+SATURDAY
+SATURDAY
+WEDNESDAY
+MONDAY
+MONDAY
+
+13 rows selected.
+
+
+9)
+
+SQL> SELECT NEXT_DAY(TO_DATE('12-MAR-2005','DD-MM-YYYY'),'FRIDAY') AS "NEXT FRIDAY" FROM DUAL;
+
+NEXT FRID
+---------
+18-MAR-05
+
+10)
+
+SQL> SELECT EMPLOYEENAME FROM EMP WHERE HIREDATE BETWEEN '30-MAR-01' AND '01-JUN-02';
+
+EMPLOYEENA
+----------
+JONES
+MARTIN
+BLAKE
+CLARK
+KING
+TURNER
+JAMES
+FORD
+
+8 rows selected.
+
+
+11)
+
+SQL> SELECT EMPLOYEENAME FROM EMP ORDER BY HIREDATE;
+
+EMPLOYEENA
+----------
+SMITH
+ALLEN
+WARD
+JONES
+BLAKE
+CLARK
+TURNER
+MARTIN
+KING
+FORD
+JAMES
+SCOTT
+ADAMS
+
+13 rows selected.
+
+
+12)
+
+SQL> SELECT DEPTNO FROM EMP WHERE DEPTNO NOT IN (SELECT DEPTNO FROM DEPT);
+
+no rows selected
+
+
+13)
+
+SQL> SELECT 'EMPLOYEE ' || EMPLOYEENAME || ' WORKING IN DEPARTMENT ' || DEPTNO || ' AND APPOINTED ON ' || HIREDATE || '.' AS RECORD
+  2  FROM EMP;
+
+RECORD
+--------------------------------------------------------------------------------------------------------------
+EMPLOYEE SMITH WORKING IN DEPARTMENT 20 AND APPOINTED ON 17-DEC-00.
+EMPLOYEE ALLEN WORKING IN DEPARTMENT 30 AND APPOINTED ON 20-FEB-01.
+EMPLOYEE WARD WORKING IN DEPARTMENT 30 AND APPOINTED ON 22-FEB-01.
+EMPLOYEE JONES WORKING IN DEPARTMENT 20 AND APPOINTED ON 02-APR-01.
+EMPLOYEE MARTIN WORKING IN DEPARTMENT 30 AND APPOINTED ON 20-SEP-01.
+EMPLOYEE BLAKE WORKING IN DEPARTMENT 30 AND APPOINTED ON 01-MAY-01.
+EMPLOYEE CLARK WORKING IN DEPARTMENT 10 AND APPOINTED ON 09-JUN-01.
+EMPLOYEE SCOTT WORKING IN DEPARTMENT 20 AND APPOINTED ON 19-APR-07.
+EMPLOYEE KING WORKING IN DEPARTMENT 10 AND APPOINTED ON 17-NOV-01.
+EMPLOYEE TURNER WORKING IN DEPARTMENT 30 AND APPOINTED ON 08-SEP-01.
+EMPLOYEE ADAMS WORKING IN DEPARTMENT 20 AND APPOINTED ON 23-MAY-07.
+EMPLOYEE JAMES WORKING IN DEPARTMENT 30 AND APPOINTED ON 03-DEC-01.
+EMPLOYEE FORD WORKING IN DEPARTMENT 20 AND APPOINTED ON 03-DEC-01.
+
+13 rows selected.
+
+
+14)
+
+SQL> SELECT EMPLOYEENAME,HIREDATE,TRUNC(SYSDATE) - TRUNC(HIREDATE) AS "DURATION OF SERVICE" FROM EMP;
+
+EMPLOYEENA HIREDATE  DURATION OF SERVICE
+---------- --------- -------------------
+SMITH      17-DEC-00                8497
+ALLEN      20-FEB-01                8432
+WARD       22-FEB-01                8430
+JONES      02-APR-01                8391
+MARTIN     20-SEP-01                8220
+BLAKE      01-MAY-01                8362
+CLARK      09-JUN-01                8323
+SCOTT      19-APR-07                6183
+KING       17-NOV-01                8162
+TURNER     08-SEP-01                8232
+ADAMS      23-MAY-07                6149
+JAMES      03-DEC-01                8146
+FORD       03-DEC-01                8146
+
+13 rows selected.
+
+
+15)
+
+SQL> SELECT COUNT(EMPLOYEENAME) FROM EMP WHERE HIREDATE>'22-MAR-01';
+
+COUNT(EMPLOYEENAME)
+-------------------
+                 10
+
+
+16)
+
+SQL> SELECT*FROM EMP WHERE DEPTNO NOT IN (SELECT DEPTNO FROM DEPT);
+
+no rows selected

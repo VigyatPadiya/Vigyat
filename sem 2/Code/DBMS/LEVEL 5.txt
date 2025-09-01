@@ -1,0 +1,260 @@
+1)
+
+SQL> SELECT ABS(-18) FROM DUAL;
+
+  ABS(-18)
+----------
+        18
+
+
+2) 
+
+SQL> SELECT ABS(30) FROM DUAL;
+
+   ABS(30)
+----------
+        30
+
+
+3)
+
+SQL> SELECT CEIL(22.5) FROM DUAL;
+
+CEIL(22.5)
+----------
+        23
+
+4)
+
+SQL> SELECT CEIL(31.2) FROM DUAL;
+
+CEIL(31.2)
+----------
+        32
+
+5)
+
+SQL> SELECT FLOOR(37.2) FROM DUAL;
+
+FLOOR(37.2)
+-----------
+         37
+
+6)
+
+SQL> SELECT HIRDATE,TO_CHAR(HIRDATE,'YEAR') FROM EMP;
+
+HIRDATE   TO_CHAR(HIRDATE,'YEAR')
+--------- ------------------------------------------
+17-DEC-00 TWO THOUSAND
+20-FEB-01 TWO THOUSAND ONE
+22-FEB-01 TWO THOUSAND ONE
+02-APR-01 TWO THOUSAND ONE
+01-MAY-01 TWO THOUSAND ONE
+20-SEP-01 TWO THOUSAND ONE
+09-JUN-01 TWO THOUSAND ONE
+19-APR-07 TWO THOUSAND SEVEN
+17-NOV-01 TWO THOUSAND ONE
+08-SEP-01 TWO THOUSAND ONE
+23-MAY-07 TWO THOUSAND SEVEN
+03-DEC-01 TWO THOUSAND ONE
+03-DEC-01 TWO THOUSAND ONE
+
+13 rows selected.
+
+
+7)
+
+SQL> SELECT MIN(SAL) FROM EMP;
+
+  MIN(SAL)
+----------
+      8000
+
+8)
+
+SQL> SELECT MAX(SAL) FROM EMP;
+
+  MAX(SAL)
+----------
+     50000
+
+
+9)
+
+SQL> SELECT RowID,EMPNM FROM EMP;
+
+ROWID              EMPNM
+------------------ ----------
+AAANRyAAEAAAAGlAAA SMITH
+AAANRyAAEAAAAGlAAB ALLEN
+AAANRyAAEAAAAGlAAC WARD
+AAANRyAAEAAAAGlAAD JONES
+AAANRyAAEAAAAGlAAE BLAKE
+AAANRyAAEAAAAGlAAF MARTIN
+AAANRyAAEAAAAGlAAG CLARK
+AAANRyAAEAAAAGlAAH SCOTT
+AAANRyAAEAAAAGlAAI KING
+AAANRyAAEAAAAGlAAJ TUNER
+AAANRyAAEAAAAGlAAK ADAMS
+AAANRyAAEAAAAGlAAL JAMES
+AAANRyAAEAAAAGlAAM FORD
+
+13 rows selected.
+
+
+10)
+
+SQL> SELECT SUM(SAL) FROM EMP;
+
+  SUM(SAL)
+----------
+    277250
+
+
+11)
+
+SQL> SELECT GRADE FROM SALGRADE;
+
+     GRADE
+----------
+         1
+         2
+         3
+         4
+         5
+
+
+12)
+
+SQL> SELECT * FROM EMP WHERE DEPTNO=(SELECT DEPTNO FROM DEPT WHERE DNAME ='ACCOUNTING');
+
+     EMPNO EMPNM      JOB              MGR HIRDATE          SAL       COMM     DEPTNO
+---------- ---------- --------- ---------- --------- ---------- ---------- ----------
+      7782 CLARK      MANAGER         7839 09-JUN-01      24500                    10
+      7839 KING       PRESIDENT            17-NOV-01      50000                    10
+
+
+13)
+
+SQL> SELECT * FROM EMP WHERE DEPTNO=(SELECT DEPTNO FROM DEPT WHERE LOC ='NEW YORK');
+
+     EMPNO EMPNM      JOB              MGR HIRDATE          SAL       COMM     DEPTNO
+---------- ---------- --------- ---------- --------- ---------- ---------- ----------
+      7782 CLARK      MANAGER         7839 09-JUN-01      24500                    10
+      7839 KING       PRESIDENT            17-NOV-01      50000                    10
+
+
+14)
+
+SQL> SELECT SAL,SAL*12 "ANNUAL SALARY" FROM EMP;
+
+       SAL ANNUAL SALARY
+---------- -------------
+      8000         96000
+     16000        192000
+     12500        150000
+     29750        357000
+     28500        342000
+     12500        150000
+     24500        294000
+     30000        360000
+     50000        600000
+     15000        180000
+     11000        132000
+      9500        114000
+     30000        360000
+
+13 rows selected.
+
+
+15)
+
+SQL> SELECT * FROM EMP WHERE DEPTNO=(SELECT DEPTNO FROM DEPT WHERE LOC ='CHICAGO');
+
+     EMPNO EMPNM      JOB              MGR HIRDATE          SAL       COMM     DEPTNO
+---------- ---------- --------- ---------- --------- ---------- ---------- ----------
+      7499 ALLEN      SALESMAN        7698 20-FEB-01      16000        300         30
+      7521 WARD       SALESMAN        7698 22-FEB-01      12500        500         30
+      7698 BLAKE      MANAGER         7839 01-MAY-01      28500                    30
+      7654 MARTIN     SALESMAN        7698 20-SEP-01      12500       1400         30
+      7844 TUNER      SALESMAN        7698 08-SEP-01      15000                    30
+      7900 JAMES      CLERK           7698 03-DEC-01       9500                    30
+
+6 rows selected.
+
+
+16)
+
+SQL> SELECT * FROM EMP WHERE SAL>(SELECT SAL FROM EMP WHERE EMPNM='JONES');
+
+     EMPNO EMPNM      JOB              MGR HIRDATE          SAL       COMM     DEPTNO
+---------- ---------- --------- ---------- --------- ---------- ---------- ----------
+      7788 SCOTT      ANALYST         7566 19-APR-07      30000                    20
+      7839 KING       PRESIDENT            17-NOV-01      50000                    10
+      7902 FORD       ANALYST         7566 03-DEC-01      30000                    20
+
+
+17)
+
+SQL> SELECT * FROM DEPT WHERE DEPTNO NOT IN(SELECT DEPTNO FROM EMP);
+
+    DEPTNO DNAME          LOC
+---------- -------------- -------------
+        40 OPERATING      BOSTON
+
+
+19)
+
+SQL> SELECT * FROM EMP WHERE DEPTNO='10'
+  2  UNION
+  3  SELECT * FROM EMP WHERE DEPTNO='30';
+
+     EMPNO EMPNM      JOB              MGR HIRDATE          SAL       COMM     DEPTNO
+---------- ---------- --------- ---------- --------- ---------- ---------- ----------
+      7499 ALLEN      SALESMAN        7698 20-FEB-01      16000        300         30
+      7521 WARD       SALESMAN        7698 22-FEB-01      12500        500         30
+      7654 MARTIN     SALESMAN        7698 20-SEP-01      12500       1400         30
+      7698 BLAKE      MANAGER         7839 01-MAY-01      28500                    30
+      7782 CLARK      MANAGER         7839 09-JUN-01      24500                    10
+      7839 KING       PRESIDENT            17-NOV-01      50000                    10
+      7844 TUNER      SALESMAN        7698 08-SEP-01      15000                    30
+      7900 JAMES      CLERK           7698 03-DEC-01       9500                    30
+
+8 rows selected.
+
+
+20)
+
+SQL> SELECT * FROM EMP WHERE DEPTNO='10'
+  2  INTERSECT
+  3  SELECT * FROM EMP WHERE DEPTNO='30';
+
+no rows selected
+
+
+21)
+
+SQL> SELECT * FROM EMP WHERE JOB=(SELECT JOB FROM EMP WHERE EMPNM='BLAKE');
+
+     EMPNO EMPNM      JOB              MGR HIRDATE          SAL       COMM     DEPTNO
+---------- ---------- --------- ---------- --------- ---------- ---------- ----------
+      7566 JONES      MANAGER         7839 02-APR-01      29750                    20
+      7698 BLAKE      MANAGER         7839 01-MAY-01      28500                    30
+      7782 CLARK      MANAGER         7839 09-JUN-01      24500                    10
+
+22)
+
+SQL> SELECT * FROM EMP WHERE SAL<(SELECT AVG(SAL) FROM EMP);
+
+     EMPNO EMPNM      JOB              MGR HIRDATE          SAL       COMM     DEPTNO
+---------- ---------- --------- ---------- --------- ---------- ---------- ----------
+      7369 SMITH      CLERK           7902 17-DEC-00       8000                    20
+      7499 ALLEN      SALESMAN        7698 20-FEB-01      16000        300         30
+      7521 WARD       SALESMAN        7698 22-FEB-01      12500        500         30
+      7654 MARTIN     SALESMAN        7698 20-SEP-01      12500       1400         30
+      7844 TUNER      SALESMAN        7698 08-SEP-01      15000                    30
+      7876 ADAMS      CLERK           7788 23-MAY-07      11000                    20
+      7900 JAMES      CLERK           7698 03-DEC-01       9500                    30
+
+7 rows selected.

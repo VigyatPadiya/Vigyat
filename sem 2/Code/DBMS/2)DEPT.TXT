@@ -1,0 +1,60 @@
+SQL> CREATE TABLE DEPT
+  2  (DEPTNO NUMBER(2),
+  3  DNAME VARCHAR(14),
+  4  LOC VARCHAR(13));
+
+Table created.
+
+SQL> INSERT INTO DEPT VALUES
+  2  (&DEPTNO,'&DNAME','&LOC');
+Enter value for deptno: 10
+Enter value for dname: ACCOUNTING
+Enter value for loc: NEW YORK
+old   2: (&DEPTNO,'&DNAME','&LOC')
+new   2: (10,'ACCOUNTING','NEW YORK')
+
+1 row created.
+
+SQL> /
+Enter value for deptno: 20
+Enter value for dname: RESEARCH
+Enter value for loc: DALLAS
+old   2: (&DEPTNO,'&DNAME','&LOC')
+new   2: (20,'RESEARCH','DALLAS')
+
+1 row created.
+
+SQL> /
+Enter value for deptno: 30
+Enter value for dname: SALES
+Enter value for loc: CHICAGO
+old   2: (&DEPTNO,'&DNAME','&LOC')
+new   2: (30,'SALES','CHICAGO')
+
+1 row created.
+
+SQL> INSERT INTO DEPT VALUES
+  2  (&DEPTNO,'&DNAME','&LOC');
+Enter value for deptno: 40
+Enter value for dname: OPERATING
+Enter value for loc: BOSTON
+old   2: (&DEPTNO,'&DNAME','&LOC')
+new   2: (40,'OPERATING','BOSTON')
+
+1 row created.
+
+
+SQL> DESCRIBE DEPT;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ DEPTNO                                             NUMBER(2)
+ DNAME                                              VARCHAR2(14)
+ LOC                                                VARCHAR2(13)
+SQL> SELECT * FROM DEPT;
+
+    DEPTNO DNAME          LOC
+---------- -------------- -------------
+        10 ACCOUNTING     NEW YORK
+        20 RESEARCH       DALLAS
+        30 SALES          CHICAGO
+        40 OPERATING      BOSTON

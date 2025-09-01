@@ -1,0 +1,37 @@
+SQL> create table EMP
+  2  (EID NUMBER(2),
+  3  ENAME VARCHAR2(15),
+  4  DEPTNO NUMBER(2),
+  5  DEPTNAME VARCHAR2(15),
+  6  GENDER VARCHAR(1),
+  7  AGE NUMBER(5),
+  8  SAL NUMBER(10));
+
+Table created.
+
+
+SQL> INSERT INTO EMP VALUES
+  2  (03,'DHRUV',10,'ACCOUNT','M',23,30000);
+
+1 row created.
+
+SQL> INSERT INTO EMP VALUES
+  2  (10,'BHAKTI',11,'HR','F',26,40000);
+
+1 row created.
+
+SQL> INSERT INTO EMP VALUES
+  2  (02,'VISHWA',12,'IT','F',29,45000);
+
+1 row created.
+
+SQL> INSERT INTO EMP VALUES
+  2  (22,'VIGYAT',12,'IT','M',25,40000);
+
+1 row created.
+
+
+SQL> INSERT INTO EMP VALUES
+  2  (03,'DHVANIT',11,'HR','M',20,30000);
+
+1 row created.

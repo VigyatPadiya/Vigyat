@@ -1,0 +1,164 @@
+*{
+    
+    padding:0px;
+    align-items: center;
+    justify-content: center;
+}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+
+
+.navbar{
+    text-align: left;
+    display: flex;
+    margin: 0px;
+    padding: 0px 60px;
+    border-radius: 10px;
+   background-color: #1750a0;
+ 
+}
+.logo{
+    width: 50%;
+    text-align: left;
+    color: white;
+}
+.login{
+    width: 50%;
+    text-align: right;
+}
+.btn{
+    background-color: white;
+    color: none;
+    padding: 10px 30px;
+    border-radius: 15px;
+}
+.main{
+    text-align: center;
+    border: none;
+    padding-bottom: 100px;
+    position: relative;
+    margin: 0 auto;
+    width:85%;
+    margin-top: 80px;
+    
+    
+    overflow: hidden;
+    
+  
+}
+.h1{
+    
+    text-align: center;
+    padding-bottom: 0px;
+    margin: 0px;
+    padding-top: 30px;
+   
+    font-family: 'Poppins', sans-serif;
+}
+.p{
+    margin: 0px;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    padding-bottom: 30px;
+    
+}
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 80%;
+  margin: 0 auto;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #eaeaff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  
+}
+.input{
+  border: none;
+  border-radius: 10px;
+  width: 80%;
+  margin: 0 auto;
+  padding: 40px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  background-color: #C4E1E6;
+}
+
+.input-wrapper input {
+  flex: 1;
+  border: none;
+  padding: 15px 15px 15px 40px; /* left padding to make space for icon */
+  font-size: 16px;
+  outline: none;
+  background-color:white;
+  
+  
+}
+
+.input-wrapper button {
+  border: none;
+  padding: 15px 25px;
+  background: #1750a0;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.input-wrapper button:hover {
+  background: #6482AD;
+}
+
+.paste-icon {
+  position: absolute;
+  left: 12px;
+  font-size: 18px;
+  color: #1750a0;
+  cursor: pointer;
+}
+#video-container{
+  
+  width: 90%;
+  margin: 0 auto;
+}
+.loader-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(255, 255, 255, 0.8);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.spinner {
+  border: 6px solid #f3f3f3;
+  border-top: 6px solid #1750a0;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+}
+
+#loader-text {
+  margin-top: 15px;
+  font-size: 16px;
+  color: #1750a0;
+  font-weight: bold;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+.error-msg {
+    color: #d32f2f;
+    background: #ffebee;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    border: 1px solid #d32f2f;
+    text-align: center;
+}

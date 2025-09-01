@@ -1,0 +1,83 @@
+1)
+SQL> ALTER TABLE EMP
+  2  RENAME COLUMN EMPNM TO VIGYAT;
+
+Table altered.
+
+SQL> SELECT VIGYAT FROM EMP;
+
+VIGYAT
+----------
+SMITH
+ALLEN
+WARD
+JONES
+MARTIN
+BLAKE
+CLARK
+SCOTT
+KING
+TURNER
+ADAMS
+JAMES
+FORD
+
+13 rows selected.
+
+
+2)
+SQL> ALTER TABLE EMP
+  2  RENAME COLUMN SAL TO SALARIES;
+
+Table altered.
+
+SQL> SELECT SALARIES FROM EMP;
+
+  SALARIES
+----------
+      8000
+     16000
+     12500
+     29750
+     12500
+     28500
+     24500
+     30000
+     50000
+     15000
+     11000
+      9500
+     30000
+
+13 rows selected.
+
+3)
+SQL> ALTER TABLE EMP
+  2  RENAME COLUMN VIGYAT TO EMPLOYEENAME;
+
+Table altered.
+
+SQL> ALTER TABLE EMP
+  2  RENAME COLUMN JOB TO DESIGNATION;
+
+Table altered.
+
+SQL> SELECT*FROM EMP;
+
+     EMPNO EMPLOYEENA DESIGNATI        MGR HIREDATE    SALARIES       COMM     DEPTNO
+---------- ---------- --------- ---------- --------- ---------- ---------- ----------
+      7369 SMITH      CLERK           7902 17-DEC-00       8000                    20
+      7499 ALLEN      SALESMAN        7698 20-FEB-01      16000        300         30
+      7521 WARD       SALESMAN        7698 22-FEB-01      12500        500         30
+      7566 JONES      MANAGER         7839 02-APR-01      29750                    20
+      7654 MARTIN     SALESMAN        7698 20-SEP-01      12500       1400         30
+      7698 BLAKE      MANAGER         7839 01-MAY-01      28500                    30
+      7782 CLARK      MANAGER         7839 09-JUN-01      24500                     1
+      7788 SCOTT      ANALYST         7566 19-APR-07      30000                    20
+      7839 KING       PRESIDENT            17-NOV-01      50000                    10
+      7844 TURNER     SALESMAN        7698 08-SEP-01      15000                    30
+      7876 ADAMS      CLERK           7788 23-MAY-07      11000                    20
+      7900 JAMES      CLERK           7698 03-DEC-01       9500                    30
+      7902 FORD       ANALYST         7566 03-DEC-01      30000                    20
+
+13 rows selected.
